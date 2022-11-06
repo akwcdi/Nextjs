@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import styles from './Layout.module.css'
+import utilstyles from '../styles/utils.module.css'
 
 const name = 'sample blog'
 export const sitetitle = 'sample'
@@ -10,10 +11,10 @@ function Layout({ children }) {
       <Head>
         <link rel="icon" href="/favicon.ico"></link>
       </Head>
-      <header>
-        <img src="/imgs/profile.png">
+      <header className={styles.header}>
+        <img src="/imgs/profile.png" className={utilstyles.borderCircle}>
         </img>
-        <h1>{name}</h1>
+        <h1 className={utilstyles.heading2Xl}>{name}</h1>
       </header>
       <main>{children}</main>
     </div>

@@ -1,14 +1,12 @@
 import Link from 'next/Link'
 import Head from 'next/head'
-import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import Layout from '../components/Layout'
+import utilstyles from '../styles/utils.module.css'
 
 export default function Home() {
   return (
     <div className={styles.container}>
-
-      <Layout></Layout>
 
       <Head>
         <title>Next.js blog</title>
@@ -16,61 +14,68 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <Link href="/posts/firstpost">Next.js!</Link>
-        </h1>
+      <Layout>
+        <section>
+          <p className={utilstyles.headingMd}>
+            Nextjs学習用
+          </p>
+        </section>
 
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
+        <section>
+          <div className={styles.grid}>
+            <article>
+              <Link href='/'>
+                <img src='/imgs/thumbnail01.jpg' className={styles.thumbnailImage}></img>
+                <a className={utilstyles.boldText}>
+                  SSGとSSRの使い分けの場面はいつなのか？
+                </a>
+                <br></br>
+              </Link>
+              <small className={utilstyles.lightText}>
+                22/11/06
+              </small>
+            </article>
+            <article>
+              <Link href='/'>
+                <img src='/imgs/thumbnail02.jpg' className={styles.thumbnailImage}></img>
+                <a className={utilstyles.boldText}>
+                  SSGとSSRの使い分けの場面はいつなのか？
+                </a>
+                <br></br>
+              </Link>
+              <small className={utilstyles.lightText}>
+                22/11/06
+              </small>
+            </article>
+            <article>
+              <Link href='/'>
+                <img src='/imgs/thumbnail03.jpeg' className={styles.thumbnailImage}></img>
+                <a className={utilstyles.boldText}>
+                  SSGとSSRの使い分けの場面はいつなのか？
+                </a>
+                <br></br>
+              </Link>
+              <small className={utilstyles.lightText}>
+                22/11/06
+              </small>
+            </article>
+            <article>
+              <Link href='/'>
+                <img src='/imgs/thumbnail04.jpg' className={styles.thumbnailImage}></img>
+                <a className={utilstyles.boldText}>
+                  SSGとSSRの使い分けの場面はいつなのか？
+                </a>
+                <br></br>
+              </Link>
+              <small className={utilstyles.lightText}>
+                22/11/06
+              </small>
+            </article>
+          </div>
+        </section>
 
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h2>Documentation &rarr;</h2>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
+      </Layout>
 
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h2>Learn &rarr;</h2>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/canary/examples"
-            className={styles.card}
-          >
-            <h2>Examples &rarr;</h2>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.card}
-          >
-            <h2>Deploy &rarr;</h2>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
     </div>
   )
 }
