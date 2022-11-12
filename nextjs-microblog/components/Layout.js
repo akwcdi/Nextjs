@@ -12,7 +12,7 @@ function Layout({ children }) {
         <link rel="icon" href="/favicon.ico"></link>
       </Head>
       <header className={styles.header}>
-        <img src="/imgs/profile.png" className={utilstyles.borderCircle}>
+        <img src="/images/profile.png" className={utilstyles.borderCircle}>
         </img>
         <h1 className={utilstyles.heading2Xl}>{name}</h1>
       </header>

@@ -35,57 +35,20 @@ export default function Home({ allPostsData }) {
 
         <section>
           <div className={styles.grid}>
-            <article>
-              <Link href='/'>
-                <img src='/imgs/thumbnail01.jpg' className={styles.thumbnailImage}></img>
-                <a className={utilstyles.boldText}>
-                  SSGとSSRの使い分けの場面はいつなのか？
-                </a>
-                <br></br>
+            {allPostsData.map(({ id, title, date, thumbnail }) => (
+             <article key = {id}>
+              <Link href={`/posts/${id}`}>
+                <img src={`${thumbnail}`} className={styles.thumbnailImage}></img>
               </Link>
+                <a className={utilstyles.boldText}>{title}</a>
+              <br />
               <small className={utilstyles.lightText}>
-                22/11/06
+                {date}
               </small>
             </article>
-            <article>
-              <Link href='/'>
-                <img src='/imgs/thumbnail02.jpg' className={styles.thumbnailImage}></img>
-                <a className={utilstyles.boldText}>
-                  SSGとSSRの使い分けの場面はいつなのか？
-                </a>
-                <br></br>
-              </Link>
-              <small className={utilstyles.lightText}>
-                22/11/06
-              </small>
-            </article>
-            <article>
-              <Link href='/'>
-                <img src='/imgs/thumbnail03.jpeg' className={styles.thumbnailImage}></img>
-                <a className={utilstyles.boldText}>
-                  SSGとSSRの使い分けの場面はいつなのか？
-                </a>
-                <br></br>
-              </Link>
-              <small className={utilstyles.lightText}>
-                22/11/06
-              </small>
-            </article>
-            <article>
-              <Link href='/'>
-                <img src='/imgs/thumbnail04.jpg' className={styles.thumbnailImage}></img>
-                <a className={utilstyles.boldText}>
-                  SSGとSSRの使い分けの場面はいつなのか？
-                </a>
-                <br></br>
-              </Link>
-              <small className={utilstyles.lightText}>
-                22/11/06
-              </small>
-            </article>
+            ))}
           </div>
         </section>
-
       </Layout>
 
     </div>
