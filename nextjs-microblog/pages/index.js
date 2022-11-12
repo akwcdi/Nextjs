@@ -3,8 +3,20 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import Layout from '../components/Layout'
 import utilstyles from '../styles/utils.module.css'
+import { getPostData } from '../lib/post'
 
-export default function Home() {
+export async function getStaticProps() {
+  const allPostsData = getPostData();
+  console.log(allPostsData);
+
+  return {
+    props: {
+      allPostsData,
+    }
+  }
+}
+
+export default function Home({ allPostsData }) {
   return (
     <div className={styles.container}>
 
