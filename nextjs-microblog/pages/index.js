@@ -7,7 +7,7 @@ import { getPostData } from '../lib/post'
 
 export async function getStaticProps() {
   const allPostsData = getPostData();
-  console.log(allPostsData);
+  // console.log(allPostsData);
 
   return {
     props: {
